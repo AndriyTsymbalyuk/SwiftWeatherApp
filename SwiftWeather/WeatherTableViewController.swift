@@ -72,7 +72,7 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = Bundle.main.loadNibNamed("CustomHeaderView", owner: self, options: nil)?.first as? CustomHeaderView
         if let date = Calendar.current.date(byAdding: .day, value: section, to: Date()) {
-            headerView?.headerTitle.text = FormaterManeger.dateToString(date: date)
+            headerView?.headerTitle.text = FormaterManeger.shared.dateToString(date: date)
         }
         return  headerView
     }
@@ -82,8 +82,8 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
             let weatherObject = forecastData[0].daily.data[indexPath.section]
             cell.summaryLabel.text = weatherObject.summary
             cell.temperatureLabel.text = "\(Int((5/9) * weatherObject.temperatureMax - 32)) °C"
-            cell.sunsetLabel.text = "Sunset\n\(FormaterManeger.doubleToString(weatherObject.sunsetTime))"
-            cell.sunriseLabel.text = "Sunrise\n\(FormaterManeger.doubleToString(weatherObject.sunriseTime))"
+            cell.sunsetLabel.text = "Sunset\n\(FormaterManeger.shared.doubleToString(weatherObject.sunsetTime))"
+            cell.sunriseLabel.text = "Sunrise\n\(FormaterManeger.shared.doubleToString(weatherObject.sunriseTime))"
             cell.imageForCell.image = UIImage(named: weatherObject.icon)
             cell.pressureLabel.text = "Pressure\n\(weatherObject.pressure) mb"
             cell.windSpeedLabel.text = "Windspeed\n\(weatherObject.windSpeed) km/h"

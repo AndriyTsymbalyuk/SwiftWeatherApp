@@ -7,9 +7,11 @@
 
 import Foundation
 
- struct FormaterManeger {
-   
-    static func doubleToString(_ value: Double) -> String {
+class FormaterManeger {
+    static let shared = FormaterManeger()
+    private init() {}
+    
+    func doubleToString(_ value: Double) -> String {
         let date = Date(timeIntervalSince1970: value)
         let format = DateFormatter()
         format.timeStyle = .short
@@ -17,7 +19,7 @@ import Foundation
         return stringFromDate
     }
     
-    static func convertToTime(value: Int) -> String {
+    func convertToTime(value: Int) -> String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute]
         formatter.unitsStyle = .positional
@@ -25,11 +27,10 @@ import Foundation
         return formattedString
     }
     
-    static func dateToString(date:Date) -> String {
+    func dateToString(date:Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd, yyyy"
         let dateString = dateFormatter.string(from: date)
         return dateString
 }
-    
 }
