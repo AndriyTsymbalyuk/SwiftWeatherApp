@@ -33,7 +33,7 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
         
     }
     
-    func updateWeatherForLocation (location:String) {
+  private func updateWeatherForLocation (location:String) {
         CLGeocoder().geocodeAddressString(location) { (placemarks:[CLPlacemark]?, error:Error?) in
             guard error == nil else {return}
             guard let location = placemarks?.first?.location  else {return}
