@@ -7,49 +7,80 @@
 
 import UIKit
 import CoreLocation
+import GooglePlaces
 
 class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLLocationManagerDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     var forecastData = [Weather]()
-    
+    var placesClient: GMSPlacesClient?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.loadGif(name: "day")
-        self.tableView.backgroundView = imageView
-        searchBar.delegate = self
-        updateWeatherForLocation(location: "Lviv")
-        tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
-    }
+        searchBar.delegate = self
+        placesClient = GMSPlacesClient.shared()
 
+        tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
+
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
+        imageView.loadGif(name: "giphy-7")
+        self.tableView.backgroundView = imageView
+        
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        
+        getCurrentPlace()
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         if let locationString = searchBar.text, !locationString.isEmpty {
             updateWeatherForLocation(location: locationString)
         }
-        
     }
     
-  private func updateWeatherForLocation (location:String) {
+    func updateWeatherForLocation (location:String) {
         CLGeocoder().geocodeAddressString(location) { (placemarks:[CLPlacemark]?, error:Error?) in
             guard error == nil else {return}
             guard let location = placemarks?.first?.location  else {return}
+            print(location.coordinate)
             Weather.forecast(withLocation: location.coordinate, completion: { (results:[Weather]?) in
                 if let weatherData = results {
                     self.forecastData = weatherData
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
-                        
                     }
                 }
             }
         )}
     }
-
-        
+    
+    func getCurrentPlace() {
+        placesClient?.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            if let placeLikelihoodList = placeLikelihoodList {
+                let place = placeLikelihoodList.likelihoods.first?.place
+                if let place = place {
+                    print(place.name)
+                    print(place.coordinate)
+                    Weather.forecast(withLocation: place.coordinate, completion: { (results:[Weather]?) in
+                        if let weatherData = results {
+                            self.forecastData = weatherData
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                    }
+                )}
+            }
+        })
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
