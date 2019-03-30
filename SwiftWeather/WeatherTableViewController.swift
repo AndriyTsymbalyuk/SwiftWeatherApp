@@ -18,20 +18,19 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         searchBar.delegate = self
+        
         placesClient = GMSPlacesClient.shared()
-
+        
         tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
-
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.loadGif(name: "giphy-7")
-        self.tableView.backgroundView = imageView
+        loadBackgroundGiphy(name: "giphy-7")
         
         let locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
-        
         getCurrentPlace()
     }
     
@@ -41,6 +40,7 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
             updateWeatherForLocation(location: locationString)
         }
     }
+
     
     func updateWeatherForLocation (location:String) {
         CLGeocoder().geocodeAddressString(location) { (placemarks:[CLPlacemark]?, error:Error?) in

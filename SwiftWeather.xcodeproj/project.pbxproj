@@ -22,6 +22,7 @@
 		89238A41224EBB1800116D86 /* giphy-5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89238A3D224EBB1800116D86 /* giphy-5.gif */; };
 		8933133E2245655D0023A5C6 /* FormaterManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933133D2245655D0023A5C6 /* FormaterManeger.swift */; };
 		893C95062245A8A70093EE49 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893C95052245A8A70093EE49 /* DoubleExtension.swift */; };
+		895D4045224F88BE001264AE /* ExtensionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895D4044224F88BE001264AE /* ExtensionTableViewController.swift */; };
 		899B19CC224535CE00A7F502 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B19CA224535CE00A7F502 /* CustomCell.swift */; };
 		899B19CD224535CE00A7F502 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899B19CB224535CE00A7F502 /* CustomCell.xib */; };
 		899B19D12245362600A7F502 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B19CF2245362600A7F502 /* CustomHeaderView.swift */; };
@@ -38,7 +39,7 @@
 		52AA6F781EC7345F003A477C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AA6F7E1EC73576003A477C /* WeatherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		52AA6F801EC735CB003A477C /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		89238A36224EBAFD00116D86 /* giphy-7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-7.gif"; sourceTree = "<group>"; };
+		89238A36224EBAFD00116D86 /* giphy-7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "giphy-7.gif"; path = "../giphy-7.gif"; sourceTree = "<group>"; };
 		89238A38224EBB0500116D86 /* giphy-6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-6.gif"; sourceTree = "<group>"; };
 		89238A3A224EBB1800116D86 /* giphy-3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-3.gif"; sourceTree = "<group>"; };
 		89238A3B224EBB1800116D86 /* giphy-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-4.gif"; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		89238A3D224EBB1800116D86 /* giphy-5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-5.gif"; sourceTree = "<group>"; };
 		8933133D2245655D0023A5C6 /* FormaterManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormaterManeger.swift; sourceTree = "<group>"; };
 		893C95052245A8A70093EE49 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		895D4044224F88BE001264AE /* ExtensionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTableViewController.swift; sourceTree = "<group>"; };
 		899B19CA224535CE00A7F502 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = ../CustomCell.swift; sourceTree = "<group>"; };
 		899B19CB224535CE00A7F502 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		899B19CF2245362600A7F502 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
@@ -106,10 +108,24 @@
 				52AA6F731EC7345F003A477C /* Assets.xcassets */,
 				52AA6F751EC7345F003A477C /* LaunchScreen.storyboard */,
 				52AA6F781EC7345F003A477C /* Info.plist */,
+				895D4046224F9223001264AE /* Giphy */,
 				899B19C72245350400A7F502 /* CustomCell  */,
 				899B19CE224535FE00A7F502 /* HeaderVIew */,
 			);
 			path = SwiftWeather;
+			sourceTree = "<group>";
+		};
+		895D4046224F9223001264AE /* Giphy */ = {
+			isa = PBXGroup;
+			children = (
+				89238A3C224EBB1800116D86 /* giphy-2.gif */,
+				89238A3A224EBB1800116D86 /* giphy-3.gif */,
+				89238A3B224EBB1800116D86 /* giphy-4.gif */,
+				89238A3D224EBB1800116D86 /* giphy-5.gif */,
+				89238A36224EBAFD00116D86 /* giphy-7.gif */,
+				89238A38224EBB0500116D86 /* giphy-6.gif */,
+			);
+			path = Giphy;
 			sourceTree = "<group>";
 		};
 		899B19C72245350400A7F502 /* CustomCell  */ = {
@@ -133,13 +149,8 @@
 		89D463CF2243B5EE0029B6EA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				89238A38224EBB0500116D86 /* giphy-6.gif */,
-				89238A3C224EBB1800116D86 /* giphy-2.gif */,
-				89238A3A224EBB1800116D86 /* giphy-3.gif */,
-				89238A3B224EBB1800116D86 /* giphy-4.gif */,
-				89238A3D224EBB1800116D86 /* giphy-5.gif */,
-				89238A36224EBAFD00116D86 /* giphy-7.gif */,
 				89D463CD2243B5E20029B6EA /* ImageView.swift */,
+				895D4044224F88BE001264AE /* ExtensionTableViewController.swift */,
 				893C95052245A8A70093EE49 /* DoubleExtension.swift */,
 			);
 			path = Extension;
@@ -288,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				893C95062245A8A70093EE49 /* DoubleExtension.swift in Sources */,
+				895D4045224F88BE001264AE /* ExtensionTableViewController.swift in Sources */,
 				89D463CE2243B5E20029B6EA /* ImageView.swift in Sources */,
 				52AA6F7F1EC73576003A477C /* WeatherTableViewController.swift in Sources */,
 				899B19CC224535CE00A7F502 /* CustomCell.swift in Sources */,
