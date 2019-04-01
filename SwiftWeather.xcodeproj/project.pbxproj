@@ -14,7 +14,6 @@
 		52AA6F7F1EC73576003A477C /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6F7E1EC73576003A477C /* WeatherTableViewController.swift */; };
 		52AA6F811EC735CB003A477C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6F801EC735CB003A477C /* Weather.swift */; };
 		749DE49632A4A05BD1D3BEEA /* Pods_SwiftWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25D4A373935061662205023 /* Pods_SwiftWeather.framework */; };
-		89238A37224EBAFD00116D86 /* giphy-7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89238A36224EBAFD00116D86 /* giphy-7.gif */; };
 		89238A39224EBB0500116D86 /* giphy-6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89238A38224EBB0500116D86 /* giphy-6.gif */; };
 		89238A3E224EBB1800116D86 /* giphy-3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89238A3A224EBB1800116D86 /* giphy-3.gif */; };
 		89238A3F224EBB1800116D86 /* giphy-4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89238A3B224EBB1800116D86 /* giphy-4.gif */; };
@@ -27,6 +26,7 @@
 		899B19CD224535CE00A7F502 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899B19CB224535CE00A7F502 /* CustomCell.xib */; };
 		899B19D12245362600A7F502 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B19CF2245362600A7F502 /* CustomHeaderView.swift */; };
 		899B19D22245362600A7F502 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899B19D02245362600A7F502 /* CustomHeaderView.xib */; };
+		89AE0E032252165B00019077 /* giphy-7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89AE0E022252165B00019077 /* giphy-7.gif */; };
 		89D463CE2243B5E20029B6EA /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D463CD2243B5E20029B6EA /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,6 @@
 		52AA6F781EC7345F003A477C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AA6F7E1EC73576003A477C /* WeatherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewController.swift; sourceTree = "<group>"; };
 		52AA6F801EC735CB003A477C /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		89238A36224EBAFD00116D86 /* giphy-7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "giphy-7.gif"; path = "../giphy-7.gif"; sourceTree = "<group>"; };
 		89238A38224EBB0500116D86 /* giphy-6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-6.gif"; sourceTree = "<group>"; };
 		89238A3A224EBB1800116D86 /* giphy-3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-3.gif"; sourceTree = "<group>"; };
 		89238A3B224EBB1800116D86 /* giphy-4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-4.gif"; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		899B19CB224535CE00A7F502 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		899B19CF2245362600A7F502 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		899B19D02245362600A7F502 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		89AE0E022252165B00019077 /* giphy-7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-7.gif"; sourceTree = "<group>"; };
 		89D463CD2243B5E20029B6EA /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		BCAD74FED605A2F544E1CE75 /* Pods-SwiftWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWeather.release.xcconfig"; path = "Target Support Files/Pods-SwiftWeather/Pods-SwiftWeather.release.xcconfig"; sourceTree = "<group>"; };
 		D25D4A373935061662205023 /* Pods_SwiftWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,8 +121,8 @@
 				89238A3C224EBB1800116D86 /* giphy-2.gif */,
 				89238A3A224EBB1800116D86 /* giphy-3.gif */,
 				89238A3B224EBB1800116D86 /* giphy-4.gif */,
+				89AE0E022252165B00019077 /* giphy-7.gif */,
 				89238A3D224EBB1800116D86 /* giphy-5.gif */,
-				89238A36224EBAFD00116D86 /* giphy-7.gif */,
 				89238A38224EBB0500116D86 /* giphy-6.gif */,
 			);
 			path = Giphy;
@@ -228,8 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AE0E032252165B00019077 /* giphy-7.gif in Resources */,
 				89238A3E224EBB1800116D86 /* giphy-3.gif in Resources */,
-				89238A37224EBAFD00116D86 /* giphy-7.gif in Resources */,
 				899B19CD224535CE00A7F502 /* CustomCell.xib in Resources */,
 				52AA6F771EC7345F003A477C /* LaunchScreen.storyboard in Resources */,
 				52AA6F741EC7345F003A477C /* Assets.xcassets in Resources */,
@@ -452,7 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SwiftWeather11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -467,7 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SwiftWeather11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

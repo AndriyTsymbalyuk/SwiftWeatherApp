@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>map</string>
+	<string>Please allow acsess</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>show map</string>
+	<string>Please allow acsess</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
