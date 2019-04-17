@@ -17,13 +17,11 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        placesClient = GMSPlacesClient.shared()
+
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
         searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         searchBar.delegate = self
-        
-        placesClient = GMSPlacesClient.shared()
         
         tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
         loadBackgroundGiphy(name: "giphy-7")
@@ -34,6 +32,8 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
         getCurrentPlace()
     }
     
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         if let locationString = searchBar.text, !locationString.isEmpty {
@@ -41,13 +41,12 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
         }
     }
 
-    
     func updateWeatherForLocation (location:String) {
         CLGeocoder().geocodeAddressString(location) { (placemarks:[CLPlacemark]?, error:Error?) in
             guard error == nil else {return}
             guard let location = placemarks?.first?.location  else {return}
             print(location.coordinate)
-            Weather.forecast(withLocation: location.coordinate, completion: { (results:[Weather]?) in
+            WeatherRequest.shared.forecast(withLocation: location.coordinate, completion: { (results:[Weather]?) in
                 if let weatherData = results {
                     self.forecastData = weatherData
                     DispatchQueue.main.async {
@@ -69,7 +68,7 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
                 if let place = place {
                     print(place.name)
                     print(place.coordinate)
-                    Weather.forecast(withLocation: place.coordinate, completion: { (results:[Weather]?) in
+                    WeatherRequest.shared.forecast(withLocation: place.coordinate, completion: { (results:[Weather]?) in
                         if let weatherData = results {
                             self.forecastData = weatherData
                             DispatchQueue.main.async {
@@ -127,4 +126,6 @@ class WeatherTableViewController: UITableViewController, UISearchBarDelegate,CLL
         return UITableViewCell()
     }
 }
+
+
 

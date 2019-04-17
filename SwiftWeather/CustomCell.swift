@@ -7,7 +7,7 @@
 
 import UIKit
 
-    class CustomCell: UITableViewCell {
+class CustomCell: UITableViewCell {
         @IBOutlet weak var sunsetLabel: UILabel!
         @IBOutlet weak var sunriseLabel: UILabel!
         @IBOutlet weak var imageForCell: UIImageView!
